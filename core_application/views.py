@@ -28,6 +28,7 @@ class ProfileView(APIView):
         }
         return Response(context, status=status.HTTP_200_OK)
 
+
 class PostView(APIView):
     def get(self, request, *args, **kwargs):
         get_post = Post.objects.prefetch_related("user__user")
