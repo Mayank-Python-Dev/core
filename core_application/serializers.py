@@ -13,11 +13,16 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class ProfileSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
+    # user = UserSerializer()
     class Meta:
         model = Profile
         fields = "__all__"
 
+class ProfileLikesSerializer(serializers.ModelSerializer):
+    user = UserSerializer()
+    class Meta:
+        model = Profile
+        fields = ["user"]
 
 class PostSerializer(serializers.ModelSerializer):
     user = ProfileSerializer()
@@ -28,7 +33,7 @@ class PostSerializer(serializers.ModelSerializer):
 
 class PostLikesSerializer(serializers.ModelSerializer):
     post = PostSerializer()
-    likes = ProfileSerializer(many=True)
+    likes = ProfileLikesSerializer(many=True)
     class Meta:
         model = PostLikes
         fields = "__all__"

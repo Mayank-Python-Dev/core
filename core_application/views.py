@@ -42,7 +42,7 @@ class PostView(APIView):
 
 class PostLikesView(APIView):
     def get(self, request, *args, **kwargs):
-        get_post_likes = PostLikes.objects.prefetch_related("post__user__user","likes__user")
+        get_post_likes = PostLikes.objects.select_related("post__user").prefetch_related("likes__user")
         serializer = PostLikesSerializer(get_post_likes, many=True)
         context = {
             "status": status.HTTP_200_OK,
