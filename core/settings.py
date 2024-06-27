@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'core_application.apps.CoreApplicationConfig',
     'management.apps.ManagementConfig',
     'ecommerce.apps.EcommerceConfig',
+    'blog.apps.BlogConfig',
     'django_extensions',
     'debug_toolbar',
     'rest_framework',
