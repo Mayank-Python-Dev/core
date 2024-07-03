@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Applications
     'core_application.apps.CoreApplicationConfig',
     'management.apps.ManagementConfig',
     'ecommerce.apps.EcommerceConfig',
     'blog.apps.BlogConfig',
+    'inventory.apps.InventoryConfig',
+    #Library
     'django_extensions',
     'debug_toolbar',
     'rest_framework',
